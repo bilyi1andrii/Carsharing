@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.headmes {
+    text-align: center;
+}
+
+
+.line {
+    width: 30%;
+    height: 5px;
+    background-color: #266461;
+    margin: 0 auto;
+}
+
+
+h2 {
+    color: #000000;
+    font-weight: bold; 
+    margin-top: 4%; 
+    font-size: 200%;
+    /* width: 80%;  */
+}
+h3 {
+    padding: 0 100px;
+    text-align: left;
+    font-size: 150%;
+    width: 80%; 
+    margin-top: 4%; 
+    margin-left: 4%; 
+
+}
+.images-row {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    display: flex; /* або display: grid; */
+    width: 80px; /* задайте потрібну ширину */
+    margin-right: 20px;
+    height: 100px;
+    margin-top: -1%; /* Підняти групу на 20 пікселів */
+    margin-left: 4%; 
+}
+
+.images-row img {
+    margin-right: 30px; /* Збільште це значення, якщо ви хочете більше відстані між картинками */
+}
+
+.next_image{
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    display: flex; /* або display: grid; */
+    width: 40px; /* задайте потрібну ширину */
+    margin-right: 20px;
+    height: 50px;
+    margin-top: 1%; /* Підняти групу на 20 пікселів */
+    margin-left: 60px; 
+}
+
+
+.photos {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3%; 
+    justify-content: center;
+  }
+  
+.photo {
+margin: 5px;
+text-align: center;
+padding:0 45px;
+}
+
+.photo img {
+width: 195px;
+margin: 5px;
+height: auto;
+}
+
+.photo p {
+font-weight: bold;
+}

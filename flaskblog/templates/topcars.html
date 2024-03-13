@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2 class="headmes">ТОП автомобілів</h2>
+<hr class="line">
+<h3>Виберіть тип машини:</h3>
+<div class="images-row">
+    <img src="{{ url_for('static', filename='profile_pics/img1.png') }}" alt="Image 1">
+    <img src="{{ url_for('static', filename='profile_pics/img2.png') }}" alt="Image 2">
+    <img src="{{ url_for('static', filename='profile_pics/img3.png') }}" alt="Image 3">
+    <img src="{{ url_for('static', filename='profile_pics/img4.png') }}" alt="Image 4">
+    <img src="{{ url_for('static', filename='profile_pics/img5.png') }}" alt="Image 5">
+</div>
+<div class="next_image">
+    <img src="{{ url_for('static', filename='profile_pics/border.png') }}" alt="Image 6">
+    <a class="top_5">TOP 5</a>
+    <a class="top_15">TOP 15</a>
+    <a class="top_30">TOP 30</a>
+
+</div>
+<div class="photos">
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 1">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 1">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 1">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 2">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 3">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 4">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 5">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 6">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 7">
+        <p>Name</p>
+    </div><div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 8">
+        <p>Name</p>
+    </div>
+    <div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 9">
+        <p>Name</p>
+    </div><div class="photo">
+        <img src="{{ url_for('static', filename='profile_pics/back.png') }}" alt="Car 10">
+        <p>Name</p>
+    </div>
+{% endblock content %}
