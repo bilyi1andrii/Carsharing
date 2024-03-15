@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container1">
+        <h2><strong>Наші найкращі опції</strong></h2>
+        <p>Виберіть тип машини:</p>
+        <div class="car-types">
+            <button>Джип</button>
+            <button>Мікро</button>
+            <button>Купе</button>
+            <button>Седан</button>
+        </div>
+    </div>
+
+<div class="home_cont">
+    <div class="box main2">
+        {% for car in cars %}
+                <div class="car_container">
+                    <h4>{{ car.carname }}</h4>
+                    <img src="{{ url_for('static', filename='car_pics/' + car.image_file) }}" alt="car1", height="200px">
+                    <form action="">
+                        <button class = "car_button" type="submit">орендувати</button>
+                    </form>
+                    <p>Rating: {{ car.rating }}</p>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
