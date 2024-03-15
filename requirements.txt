@@ -1,5 +1,0 @@
-1. flask
-2. flask-wtf
-3. flask-sqlalchemy
-4. flask-bcrypt
-5. Pillow
