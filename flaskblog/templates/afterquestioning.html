@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container1">
+        <h2><strong>Наші найкращі опції</strong></h2>
+        <p>Виберіть тип машини:</p>
+        <div class="car-types">
+            <a href="{{ url_for('afterquestioning', carsy='Хетчбек') }}"><button>Хетчбек</button></a>
+            <a href="{{ url_for('afterquestioning', carsy='Мікро') }}"><button>Мікро</button></a>
+            <a href="{{ url_for('afterquestioning', carsy='Джип (SUV)') }}"><button>Джип (SUV)</button></a>
+            <a href="{{ url_for('afterquestioning', carsy='Купе') }}"><button>Купе</button></a>
+            <a href="{{ url_for('afterquestioning', carsy='Седан') }}"><button>Седан</button></a>
+        </div>
+    </div>
+
+<div class="home_cont">
+    <div class="box main2">
+        {% for car in cars %}
+                <div class="car_container">
+                    <h4>{{ car.carname }}</h4>
+                    <img src="{{ url_for('static', filename='car_pics/' + car.image_file) }}" alt="car1", height="200px">
+                    <form action="{{ url_for('carpage', car_id=car.id) }}">
+                        <button class = "car_button" type="submit">орендувати</button>
+                    </form>
+                    <p>Rating: {{ car.rating }}</p>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
