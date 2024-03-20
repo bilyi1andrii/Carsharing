@@ -91,12 +91,9 @@ def account():
 def faq():
     return render_template('FAQ.html', title='Frequently Asked Questions')
 
-@app.route("/rating/<int:number>/<string:carsy>")
-def tops(number, carsy):
-    if carsy != 'Седа':
-        cars = Car.query.filter_by(type=carsy).order_by(Car.rating.desc()).paginate(per_page=number)
-    else:
-        cars = Car.query.order_by(Car.rating.desc()).paginate(per_page=number)
+@app.route("/rating")
+def tops():
+    cars = Car.query.order_by(Car.rating.desc())
     return render_template('topcars.html', cars=cars)
 
 
@@ -154,21 +151,27 @@ def questionnaire():
         cars = pick_the_best(cars, answer)
         serialized_cars = [car.to_json() for car in cars]
         session['cars'] = serialized_cars
-        return redirect(url_for('afterquestioning', carsy='Седа'))
+        return redirect(url_for('afterquestioning'))
 
     return render_template("questionnaire.html", form=form)
 
 
-@app.route("/afterquestioning/<string:carsy>")
+@app.route("/afterquestioning")
 @login_required
-def afterquestioning(carsy):
+def afterquestioning():
     serialized_cars = session.get('cars', [])
     cars = [Car.from_json(car_data) for car_data in serialized_cars]
-    if carsy != 'Седа':
-        cars = [car for car in cars if car.type == carsy]
     return render_template("afterquestioning.html", cars=cars)
 
 @app.route("/car/<int:car_id>")
 def carpage(car_id):
     car = Car.query.get_or_404(car_id)
     return render_template('carpage.html', car=car)
+
+@app.route("/calendar")
+def calendar():
+    return render_template('calendar.html', title='calendar')
+
+@app.route("/message")
+def message():
+    return render_template('message.html', title='message')
