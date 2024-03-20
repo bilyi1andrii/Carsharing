@@ -2,15 +2,16 @@
 {% block content %}
     <div class="main3">
         <h2 class="hesik">Назва машини: {{car.carname}} </h2>
+        <p> ... Опис машини ...</p>
             <img class="phot" src="{{ url_for('static', filename='car_pics/' + car.image_file)  }}" alt="Фотографія">
         <div class="phrase">
             <span class="dot">.</span> Тип кузова - {{car.type}} <br>
             <span class="dot">.</span> Об'єм двигуна - {{car.engine_capacity}} <br>
-            <span class="dot">.</span> Рейтинг - {{car.rating}} <br>
-            <span class="dot">.</span> Рік - {{car.year}} <br>
-            <span class="dot">.</span> Ціна за годину (грн) - {{car.price_per_hour}} <br>
+            <span class="dot">.</span> Rating: {{car.rating}} <br>
         </div>
+        <p>... Ціна за годину ...</p>
     </div>
-    <button class="red-button">Вибрати дати</button>
-
+    <form action="{{ url_for('calendar') }}" method="get">
+        <button class="red-button" type="submit">Вибрати дати</button>
+    </form>
 {% endblock content %}
