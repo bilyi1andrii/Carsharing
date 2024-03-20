@@ -1,56 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calendar</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
-  <script src="{{ url_for('static', filename='css/calendar.js') }}" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма для вибору дати оренди авто</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
+<script src="{{ url_for('static', filename='css/calendar.js') }}" defer></script>
 </head>
 
 <body>
-  <div class="contianer">
-    <div class="calendar">
-      <div class="calendar-header">
-        <span class="month-picker" id="month-picker"> May </span>
-        <div class="year-picker" id="year-picker">
-          <span class="year-change" id="pre-year">
-            <pre><</pre>
-          </span>
-          <span id="year">2020 </span>
-          <span class="year-change" id="next-year">
-            <pre>></pre>
-          </span>
-        </div>
-      </div>
 
-      <div class="calendar-body">
-        <div class="calendar-week-days">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="calendar-days">
-        </div>
-      </div>
-      <div class="calendar-footer">
-        <button id="today-btn"></button>
-      </div>
-      <!-- <div class="date-time-formate">
-        <div class="day-text-formate">TODAY</div>
-        <div class="date-time-value">
-          <div class="time-formate">01:41:20</div>
-          <div class="date-formate">03 - march - 2022</div>
-        </div>
-      </div> -->
-      <div class="month-list"></div>
+<div class="container">
+  <h2>    Вибрати дати    </h2>
+
+  <form id="rentalForm">
+    <div class="form-group">
+      <label for="startDate">Початок оренди:</label>
+      <input type="date" id="startDate" name="startDate">
     </div>
-  </div>
-</body>
+    <div class="form-group">
+      <label for="endDate">Кінець оренди:</label>
+      <input type="date" id="endDate" name="endDate">
+    </div>
+    <form action="{{ url_for('message') }}" method="get">
+      <button type="submit">Підтвердити</button>
+    
+  </form>
+</div>
 
+</body>
 </html>
