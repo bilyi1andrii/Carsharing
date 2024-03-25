@@ -45,9 +45,21 @@ body, html {
   margin-bottom: 10px;
 }
 
-.logo {
-  width: 100px;
+/* .logo {
+  width: 10px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin-bottom: autox;
+} */
+button {
+  background-color: #E24F4F;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #E24F4F;
 }
