@@ -175,3 +175,8 @@ def calendar():
 @app.route("/message")
 def message():
     return render_template('message.html', title='message')
+
+@app.route('/')
+def index():
+    today = date.today().strftime('%Y-%m-%d')
+    return render_template('your_template.html', today=today)
