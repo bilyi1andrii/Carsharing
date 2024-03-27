@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма для вибору дати оренди авто</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
+<script src="{{ url_for('static', filename='scripts/calendar.js') }}" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>    Вибрати дати    </h2>
+
+  <form id="rentalForm">
+    <div class="form-group">
+      <label for="startDate">Початок оренди:</label>
+      <input type="date" id="startDate" name="startDate">
+    </div>
+    <div class="form-group">
+      <label for="endDate">Кінець оренди:</label>
+      <input type="date" id="endDate" name="endDate">
+    </div>
+
+  </form>
+  <form action="{{ url_for('main.message') }}" method="get">
+    <button type="submit">Підтвердити</button>
+  </form>
+</div>
+
+</body>
+</html>
