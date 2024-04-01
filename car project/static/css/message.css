@@ -1,0 +1,61 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif; /* Встановлюємо шрифт Montserrat */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.content {
+  border: 4px solid #E24F4F; /* Товстіша червона рамка */
+  border-radius: 15px; /* Круглі кути */
+  padding: 20px;
+}
+
+.message-box {
+  text-align: center;
+}
+
+.message {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+
+.manager{
+  color:  #266461;
+  font-size: 20px;
+}
+
+.address {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #E24F4F;
+
+}
+
+.payment-info {
+  font-size: 9px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #E24F4F;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #E24F4F;
+}

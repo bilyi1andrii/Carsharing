@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#questionnaire-container {
+    display: flex;
+    justify-content: center;
+}
+
+#questionnaire-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ch_button {
+    width: 730px;
+    height: 85px;
+    border-radius: 20px;
+    margin-bottom: 20px; /* Зменшено відступ між кнопками */
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #868686;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#sbm {
+    width: 250px;
+    height: 50px;
+    border-radius: 17px;
+    border: 2px solid grey;
+    background-color: rgb(38, 100, 97);
+    text-align: center;
+    font-size: 24px;
+    color: #ecebeb;
+}
+
+#sbm:hover {
+    background-color: rgb(127, 162, 158);
+    cursor: pointer;
+}
+
+.ch_button:hover {
+    background-color: #ccc; /* Вкажіть новий колір, який ви бажаєте */
+}
+
+@media(max-width: 850px){
+    .ch_button{
+      max-width: 430px;
+  }
+  }

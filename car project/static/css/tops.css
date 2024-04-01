@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.headmes {
+    text-align: center;
+    color: #000000;
+    font-weight: bold; 
+    margin-top: 4%; 
+    font-size: 200%;
+}
+
+
+.line {
+    width: 30%;
+    height: 5px;
+    background-color: #266461;
+    margin: 0 auto;
+}
+
+
+.h3 {
+    padding: 0 100px;
+    text-align: left;
+    font-size: 150%;
+    width: 80%; 
+    margin-top: 4%; 
+
+}
+.images-row {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    display: flex; 
+    width: 600px;
+    margin-right: 30px;
+    height: 90px;
+    margin-top: -1%; 
+}
+
+.images-row img {
+    margin-right: 30px; /* Збільште це значення, якщо ви хочете більше відстані між картинками */
+}
+
+.next_image{
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    display: flex; /* або display: grid; */
+    width: 40px; /* задайте потрібну ширину */
+    margin-right: 20px;
+    height: 50px;
+    margin-top: 1%; /* Підняти групу на 20 пікселів */
+}
+
+
+.next_image a {
+    text-decoration: none;
+    color: inherit; 
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.next_image a:hover {
+    color: #E24F4F;
+}
+.top_5{
+    margin-top: 1%;
+    margin-left: -360px; 
+    margin-right: 60px;
+    text-align: center; 
+}
+
+.top_15{
+    margin-top: 1%;
+    margin-left: 43px;
+    text-align: center;
+}
+.top_30{
+    margin-top: 1%;
+    margin-left: 110px;
+    margin-right: 60px;
+    text-align: center;
+}
+
+
+.images-row a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.images-row a img {
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+
+.images-row a:hover img {
+    transform: scale(1.1);
+}
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.car-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
