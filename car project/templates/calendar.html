@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма для вибору дати оренди авто</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
+<script src="{{ url_for('static', filename='scripts/calendar.js') }}" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Вибрати дати</h2>
+
+  <form id="rentalForm" onsubmit="return validateForm()" action="{{ url_for('main.message') }}" method="post">
+    <div class="form-group">
+      <label for="startDate">Початок оренди:</label>
+      <input type="date" id="startDate" name="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">Кінець оренди:</label>
+      <input type="date" id="endDate" name="endDate" required>
+    </div>
+    <button type="submit">Підтвердити</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    var startDate = document.getElementById("startDate").value;
+    var endDate = document.getElementById("endDate").value;
+
+    // Check if start date and end date are selected
+    if (!startDate || !endDate) {
+      alert("Будь ласка, оберіть обидві дати.");
+      return false;
+    }
+
+    // Get current date
+    var currentDate = new Date();
+    var dd = String(currentDate.getDate()).padStart(2, '0');
+    var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = currentDate.getFullYear();
+    var today = yyyy + '-' + mm + '-' + dd;
+
+    // Check if start date is in the past
+    if (startDate < today) {
+      alert("Початкова дата не може бути в минулому.");
+      return false;
+    }
+
+    // Check if end date is in the past
+    if (endDate < today) {
+      alert("Кінцева дата не може бути в минулому.");
+      return false;
+    }
+
+    // Check if end date is before start date
+    if (endDate < startDate) {
+      alert("Кінцева дата повинна бути пізніше початкової дати.");
+      return false;
+    }
+
+    // If form validation passes, submit the form programmatically
+    document.getElementById("rentalForm").submit();
+    return true; // Form submission allowed
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="main3">
+        <h2 class="hesik">Назва машини: {{car.carname}} </h2>
+            <img class="phot" src="{{ url_for('static', filename='car_pics/' + car.image_file)  }}" alt="Фотографія">
+        <div class="phrase">
+            <span class="dot">.</span> Тип кузова - {{car.type}} <br>
+            <span class="dot">.</span> Об'єм двигуна - {{car.engine_capacity}} <br>
+            <span class="dot">.</span> Рік - {{car.year}} <br>
+            <span class="dot">.</span> Ціна за годину (грн) - {{car.price_per_hour}} <br>
+            <span class="dot">.</span> Опубліковано користувачем - {{current_user.username}} <br>
+            <span class="dot">.</span> Розташування - {{car.location}} <br>
+
+
+            {% if car.author == current_user %}
+                <div>
+                    <button type="button" class="batonchik btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Видалити машину</button>
+                </div>
+            {% else %}
+                <form action="{{ url_for('main.calendar') }}" method="post">
+                    <button class="red-button" type="submit">Вибрати дати</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Видалити Машину?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                    <form action="{{ url_for('cars.delete_car', car_id=car.id) }}" method="POST">
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
